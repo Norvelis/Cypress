@@ -1,10 +1,9 @@
 {
   "dependencies": {
-    "cypress": "^15.10.0"
+    "cypress": "^15.10.0",
+    "ts-node": "^10.9.2"
   },
   "scripts": {
-    "cy:open":"cypress open"
+    "cy:open": "cypress open"
   }
 }
-
-
