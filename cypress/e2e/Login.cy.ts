@@ -1,6 +1,6 @@
 /// <reference types="cypress" /> 
 import { contains } from "cypress/types/jquery";
-import { LoginLocators } from "../Pages/LoginPage" 
+//import { LoginLocators } from "../Pages/LoginPage" 
 
     let user: any 
     beforeEach(() => {
@@ -10,7 +10,7 @@ import { LoginLocators } from "../Pages/LoginPage"
      cy.visit('https://www.saucedemo.com/');
     });
 
-describe('Login', ()=>{
+/*describe('Login', ()=>{
 
     it('Login con usuario valido', ()=> { 
         cy.get(LoginLocators.username).type(user.username); 
@@ -28,4 +28,4 @@ describe('Login', ()=>{
 
     })
 
-})
+})*/

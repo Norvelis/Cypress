@@ -1,25 +1,27 @@
 
+
+export const loginLocators = {
+  username: "#user-name",
+  password: "#password",
+  loginButton: "#login-button",
+  errorMessage: '[data-test="error"]'
+}
+
 export class LoginPage{
-
-private username: "#user-name"
-private password: "#password"
-private loginButton: "#login-button"
-private errorMessage: '[data-test="error"]'
-
 typeUsername(username:string){
-  cy.get(this.username).type(username)
+  cy.get(loginLocators.username).type(username)
 }
 
 typePassword(password:string){
-  cy.get(this.password).type(password)
+  cy.get(loginLocators.password).type(password)
 }
 
 clickLoginButton(){
-  cy.get(this.loginButton).click()
+  cy.get(loginLocators.loginButton).click()
 }
 
 getErrorMessage(){
-  return cy.get(this.errorMessage)
+  return cy.get(loginLocators.errorMessage)
 }
 
 loginStandardUser(username:string, password:string){
