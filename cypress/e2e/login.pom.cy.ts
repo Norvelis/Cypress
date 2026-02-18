@@ -11,7 +11,7 @@ import { LoginPage } from "../Pages/LoginPage";
      cy.visit('https://www.saucedemo.com/');
     });
 
-  it.only("Test con POM",()=>{
+  it("Test con POM",()=>{
 
     const loginPage = new LoginPage()
 
@@ -22,13 +22,21 @@ import { LoginPage } from "../Pages/LoginPage";
 
   })
 
-  it("Test con POM 2",()=>{
+  it.only("Login con usuario válido",()=>{
 
     const loginPage = new LoginPage()
 
-   loginPage.loginStandardUser(user.username, user.password)
-   cy.url().should('include', '/inventory.html');
+    loginPage.login(user.username, user.password)
+    loginPage.getUrlSuccess()
+  
+  })
 
+  it("Login con usuario bloqueado",()=>{
+
+    const loginPage = new LoginPage()
+
+    loginPage.login(user.username, user.invalidUser)
+    loginPage.getErrorMessage()
   })
 
 

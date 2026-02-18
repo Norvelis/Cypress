@@ -20,15 +20,20 @@ clickLoginButton(){
   cy.get(loginLocators.loginButton).click()
 }
 
-getErrorMessage(){
-  return cy.get(loginLocators.errorMessage)
+getUrlSuccess(){
+cy.url().should('include', '/inventory.html');
 }
 
-loginStandardUser(username:string, password:string){
+getErrorMessage(){
+  return cy.get(loginLocators.errorMessage).should('be.visible').and('contain.text', 'this user has been locked out')
+}
+
+login(username:string, password:string){
   this.typeUsername(username)
   this.typePassword(password)
   this.clickLoginButton()
 }
+
 
 
 }
